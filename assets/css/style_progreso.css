@@ -1,0 +1,283 @@
+.tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    background: var(--surface2);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+}
+.tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+}
+.tab.active {
+    background: var(--surface);
+    color: var(--green);
+    border: 0.5px solid var(--border2);
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.peso-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 20px;
+    margin-bottom: 12px;
+}
+.peso-actual-valor { font-size: 32px; font-weight: 700; color: var(--text); line-height: 1; }
+.diff-positivo { color: var(--orange); font-size: 20px; font-weight: 600; }
+.diff-negativo { color: var(--green);  font-size: 20px; font-weight: 600; }
+.medidas-fila {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 0.5px solid var(--border);
+}
+.medida-valor { font-size: 16px; font-weight: 600; color: var(--text); }
+
+/* ── Récords ── */
+.marca-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+}
+.marca-row:last-child { border-bottom: none; }
+.marca-nombre { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.marca-meta   { font-family: var(--font-mono); font-size: 11px; color: var(--text3); }
+.badge-record {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(232,78,27,0.1);
+    color: var(--orange);
+    border: 0.5px solid rgba(232,78,27,0.2);
+    white-space: nowrap;
+}
+
+/* ── Acordeón por músculo ── */
+.musculo-bloque {
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.musculo-header {
+    background: var(--surface2);
+    padding: 11px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+}
+.musculo-header:hover { background: rgba(114,196,66,0.07); }
+.musculo-header-nombre {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.musculo-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.musculo-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text3);
+}
+.musculo-flecha {
+    font-size: 10px;
+    color: var(--text3);
+    transition: transform 0.25s;
+}
+.musculo-flecha.abierto { transform: rotate(180deg); }
+.musculo-contenido {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    padding: 0 14px;
+}
+
+/* ── Ver más dentro de cada grupo ── */
+.btn-ver-mas {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    background: none;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-sm);
+    color: var(--text3);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: border-color 0.2s, color 0.2s;
+}
+.btn-ver-mas:hover { border-color: var(--green); color: var(--green); }
+
+/* ── Botón ver todos / colapsar ── */
+.btn-ver-todos {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: var(--green-dim);
+    color: var(--green);
+    border: 0.5px solid rgba(114,196,66,0.35);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+}
+.btn-ver-todos:hover { background: rgba(90,158,58,0.3); }
+
+/* ── Peso máximo PR ── */
+.pesomax-pr {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+    gap: 12px;
+}
+.pesomax-pr:last-child { border-bottom: none; }
+.pesomax-pr img {
+    width: 50px; height: 50px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    border: 0.5px solid var(--border);
+}
+.pesomax-placeholder {
+    width: 50px; height: 50px;
+    border-radius: var(--radius-sm);
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+.nombre-ejercicio {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+}
+.nombre-ejercicio span {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text3);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.stat-pr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+.stat-pr-valor { font-size: 14px; font-weight: 600; color: var(--green); white-space: nowrap; }
+.stat-pr-label { font-family: var(--font-mono); font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── Modal ── */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.visible { display: flex; }
+.modal {
+    background: var(--surface2);
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    width: 90%;
+    max-width: 400px;
+}
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.modal-top h2 { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+.modal-close { background: none; border: none; cursor: pointer; color: var(--text3); font-size: 18px; transition: color 0.2s; }
+.modal-close:hover { color: var(--text); }
+.modal label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+.modal input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-display);
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--text);
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    transition: border-color 0.2s;
+}
+.modal input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px var(--green-glow2); }
+.btn-ghost {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: none;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-sm);
+    color: var(--text3);
+    font-family: var(--font-display);
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--border2); color: var(--text2); }
+
+.oculto { display: none; }

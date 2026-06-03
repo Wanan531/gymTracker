@@ -1,0 +1,31 @@
+# Configuración con credenciales reales
+config/db.php
+
+# Variables de entorno
+.env
+
+# Imágenes subidas por usuarios (no pertenecen al código)
+assets/uploads/avatars/*
+assets/uploads/ejercicios/*
+
+# Mantener las carpetas vacías en el repo
+!assets/uploads/avatars/.gitkeep
+!assets/uploads/ejercicios/.gitkeep
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+error_log
+
+# Dependencias (si en algún momento usas composer)
+vendor/
