@@ -131,7 +131,7 @@ http://localhost/gymtracker
 | Frontend | HTML5, CSS3, JavaScript ES6+ |
 | Tipografía | Syne + DM Mono (Google Fonts) |
 | IA | Groq API |
-| Servidor (dev) | WSL2 |
+| Servidor (dev) | WSL2 + Apache |
 
 ---
 
